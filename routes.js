@@ -5,6 +5,7 @@ const {
   createGame,
   getGameById,
   updateGameById,
+  deleteGameById,
 } = require("./gameController");
 
 // base url http://localhost:3001/
@@ -19,5 +20,8 @@ router.post("/", createGame);
 
 // update a specific game by id
 router.put("/:id", updateGameById);
+
+// delete a specific game by id
+router.delete("/:id", deleteGameById);
 
 module.exports = router;

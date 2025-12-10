@@ -1,0 +1,188 @@
+[
+  {
+    "franchise": "Donkey Kong",
+    "title": "Donkey Kong Country",
+    "console": "Super Nintendo Entertainment System (SNES)",
+    "release_date": "1994-11-21",
+    "description": "A groundbreaking platformer with pre-rendered 3D graphics where Donkey Kong and Diddy Kong battle King K. Rool and his Kremlings.",
+    "characters": ["Donkey Kong", "Diddy Kong"],
+    "publisher": "Nintendo",
+    "developer": "Rare",
+    "genre": "Platformer"
+  },
+
+  {
+    "franchise": "Donkey Kong",
+    "title": "Donkey Kong Country 2: Diddy's Kong Quest",
+    "console": "Super Nintendo Entertainment System (SNES)",
+    "release_date": "1995-11-20",
+    "description": "Diddy Kong and Dixie Kong set out to rescue Donkey Kong from Kaptain K. Rool.",
+    "characters": ["Diddy Kong", "Dixie Kong", "Donkey Kong (captured)"],
+    "publisher": "Nintendo",
+    "developer": "Rare",
+    "genre": "Platformer"
+  },
+  {
+    "franchise": "Donkey Kong",
+    "title": "Donkey Kong Country 3: Dixie Kong's Double Trouble!",
+    "console": "Super Nintendo Entertainment System (SNES)",
+    "release_date": "1996-11-18",
+    "description": "Dixie Kong and her cousin Kiddy Kong embark on an adventure to rescue Donkey Kong and Diddy Kong.",
+    "characters": ["Dixie Kong", "Kiddy Kong", "Donkey Kong", "Diddy Kong"],
+    "publisher": "Nintendo",
+    "developer": "Rare",
+    "genre": "Platformer"
+  },
+  {
+    "franchise": "Donkey Kong",
+    "title": "Donkey Kong 64",
+    "console": "Nintendo 64",
+    "release_date": "1999-11-22",
+    "description": "A 3D platformer where Donkey Kong and his friends must stop King K. Rool’s evil plans.",
+    "characters": [
+      "Donkey Kong",
+      "Diddy Kong",
+      "Tiny Kong",
+      "Lanky Kong",
+      "Chunky Kong"
+    ],
+    "publisher": "Nintendo",
+    "developer": "Rare",
+    "genre": "Platformer"
+  },
+  {
+    "franchise": "Donkey Kong",
+    "title": "Donkey Kong Country: Tropical Freeze",
+    "console": "Nintendo Wii U",
+    "release_date": "2014-02-13 (Wii U), 2018-05-04 (Switch)",
+    "description": "Donkey Kong and friends battle the Snowmads in a beautifully animated platformer.",
+    "characters": [
+      "Donkey Kong",
+      "Diddy Kong",
+      "Dixie Kong",
+      "Cranky Kong",
+      "Funky Kong (Switch version)"
+    ],
+    "publisher": "Nintendo",
+    "developer": "Retro Studios",
+    "genre": "Platformer"
+  },
+  {
+    "franchise": "Metal Gear Solid",
+    "title": "Metal Gear Solid",
+    "console": "PlayStation",
+    "release_date": "1998-09-03",
+    "description": "Stealth action game where Solid Snake infiltrates Shadow Moses to stop FOXHOUND from launching a nuclear strike.",
+    "characters": [
+      "Solid Snake",
+      "Liquid Snake",
+      "Meryl Silverburgh",
+      "Revolver Ocelot",
+      "Psycho Mantis"
+    ],
+    "publisher": "Konami",
+    "developer": "Konami Computer Entertainment Japan (KCEJ)",
+    "genre": "Stealth Action"
+  },
+  {
+    "franchise": "Metal Gear Solid",
+    "title": "Metal Gear Solid 2: Sons of Liberty",
+    "console": "PlayStation 2",
+    "release_date": "2001-11-13",
+    "description": "Snake and Raiden uncover a conspiracy involving the Patriots while battling terrorists on the Big Shell.",
+    "characters": [
+      "Solid Snake",
+      "Raiden",
+      "Otacon",
+      "Revolver Ocelot",
+      "Olga Gurlukovich"
+    ],
+    "publisher": "Konami",
+    "developer": "Konami Computer Entertainment Japan (KCEJ)",
+    "genre": "Stealth Action"
+  },
+  {
+    "franchise": "Metal Gear Solid",
+    "title": "Metal Gear Solid 3: Snake Eater",
+    "console": "PlayStation 2",
+    "release_date": "2004-11-17",
+    "description": "Set during the Cold War, Naked Snake must stop The Boss and prevent nuclear catastrophe.",
+    "characters": [
+      "Naked Snake (Big Boss)",
+      "The Boss",
+      "Major Zero",
+      "Eva",
+      "Ocelot"
+    ],
+    "publisher": "Konami",
+    "developer": "Konami Computer Entertainment Japan (KCEJ)",
+    "genre": "Stealth Action"
+  },
+  {
+    "franchise": "Metal Gear Solid",
+    "title": "Metal Gear Solid 4: Guns of the Patriots",
+    "console": "PlayStation 3",
+    "release_date": "2008-06-12",
+    "description": "An aging Solid Snake faces Liquid Ocelot in a world dominated by private military companies.",
+    "characters": [
+      "Solid Snake",
+      "Liquid Ocelot",
+      "Otacon",
+      "Meryl Silverburgh",
+      "Raiden"
+    ],
+    "publisher": "Konami",
+    "developer": "Kojima Productions",
+    "genre": "Stealth Action"
+  },
+  {
+    "franchise": "Metal Gear Solid",
+    "title": "Metal Gear Solid: Peace Walker",
+    "console": "PlayStation Portable",
+    "release_date": "2010-04-29",
+    "description": "Big Boss builds his own army while confronting nuclear threats in Costa Rica.",
+    "characters": [
+      "Big Boss",
+      "Kazuhira Miller",
+      "Paz Ortega",
+      "Huey Emmerich"
+    ],
+    "publisher": "Konami",
+    "developer": "Kojima Productions",
+    "genre": "Stealth Action"
+  },
+  {
+    "franchise": "Metal Gear Solid",
+    "title": "Metal Gear Solid V: Ground Zeroes",
+    "console": "PlayStation 3, PlayStation 4, Xbox 360, Xbox One, PC",
+    "release_date": "2014-03-18",
+    "description": "Prologue to The Phantom Pain where Big Boss infiltrates Camp Omega to rescue Chico and Paz.",
+    "characters": [
+      "Big Boss",
+      "Kazuhira Miller",
+      "Paz Ortega",
+      "Chico",
+      "Skull Face"
+    ],
+    "publisher": "Konami",
+    "developer": "Kojima Productions",
+    "genre": "Stealth Action"
+  },
+  {
+    "franchise": "Metal Gear Solid",
+    "title": "Metal Gear Solid V: The Phantom Pain",
+    "console": "PlayStation 3, PlayStation 4, Xbox 360, Xbox One, PC",
+    "release_date": "2015-09-01",
+    "description": "Big Boss awakens from a coma and builds Diamond Dogs while seeking revenge against Cipher.",
+    "characters": [
+      "Big Boss",
+      "Kazuhira Miller",
+      "Quiet",
+      "Revolver Ocelot",
+      "Skull Face",
+      "Huey Emmerich"
+    ],
+    "publisher": "Konami",
+    "genre": "Stealth Action"
+  }
+]
