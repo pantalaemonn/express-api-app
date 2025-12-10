@@ -1,6 +1,6 @@
 const mongoose = require("mongoose");
 
-// Game schema matching games.json structure
+// Game schema
 const gameSchema = new mongoose.Schema({
   franchise: { type: String },
   title: { type: String, required: true },

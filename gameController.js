@@ -99,3 +99,20 @@ exports.updateGameById = async (req, res) => {
     res.status(500).send({ message: "Error updating game", error });
   }
 };
+
+// Delete a game by id
+exports.deleteGameById = async (req, res) => {
+  try {
+    const { id } = req.params;
+
+    const deleted = await Game.findByIdAndDelete(id);
+
+    if (!deleted) {
+      return res.status(404).send({ message: "Game not found" });
+    }
+
+    res.send({ message: "Game deleted successfully", game: deleted });
+  } catch (error) {
+    res.status(500).send({ message: "Error deleting game", error });
+  }
+};
