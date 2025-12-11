@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>My Games Inventory</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main>
+      <h1>My Games Inventory</h1>
+
+      <section class="controls">
+        <label>
+          Genre:
+          <select id="genre-select">
+            <option value="">All</option>
+          </select>
+        </label>
+
+        <label>
+          Franchise:
+          <select id="franchise-select">
+            <option value="">All</option>
+          </select>
+        </label>
+
+        <label>
+          Console:
+          <select id="console-select">
+            <option value="">All</option>
+          </select>
+        </label>
+
+        <label class="search">
+          Search:
+          <input
+            id="search-input"
+            type="search"
+            placeholder="Search title, description, characters"
+          />
+        </label>
+
+        <!-- <button id="clear-btn">Clear</button> -->
+      </section>
+
+      <section id="results"></section>
+    </main>
+
+    <script src="app.js"></script>
+  </body>
+</html>

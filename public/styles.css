@@ -1,0 +1,109 @@
+body {
+  font-family: Segoe UI, Roboto, Helvetica, Arial, sans-serif;
+  margin: 0;
+  padding: 20px;
+  background: #8b9cbb;
+  color: #111;
+}
+main {
+  max-width: 980px;
+  margin: 0 auto;
+}
+h1 {
+  margin: 0 0 16px;
+}
+.controls {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  align-items: center;
+  margin-bottom: 18px;
+  background: #5b6c89;
+  padding: 1rem 1rem;
+  border-radius: 8px;
+  padding-bottom: 1rem;
+  border: 0.8rem solid #415476;
+}
+.controls label {
+  display: flex;
+  flex-direction: column;
+  font-size: 1rem;
+  color: #fff;
+}
+.controls .search {
+  flex: 1;
+  min-width: 220px;
+}
+select,
+input[type="search"] {
+  padding: 6px 8px;
+  border: 1px solid #8b9cbb;
+  border-radius: 4px;
+  margin-top: 0.4rem;
+  background: #3d4e6d;
+  color: #bec4d1;
+}
+button#clear-btn {
+  padding: 8px 12px;
+  background: #eee;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  cursor: pointer;
+}
+input::placeholder {
+  color: #bec4d1;
+}
+img {
+  max-width: 50%;
+  object-fit: cover;
+  opacity: 60%;
+  min-width: 20%;
+  border-radius: 8px;
+}
+.game {
+  padding: 12px 14px;
+  border-radius: 8px;
+  margin-bottom: 12px;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.04);
+  display: flex;
+  flex-direction: row;
+  background: linear-gradient(-45deg, #5b6c89, transparent);
+}
+.game h2 {
+  margin: 0 0 10px;
+  color: #313f59;
+}
+.card-header {
+  flex: 1;
+  background: linear-gradient(-90deg, #405375, transparent);
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  padding-left: 0.6rem;
+  padding-right: 0.6rem;
+}
+.meta {
+  color: #d3def3;
+  font-size: 13px;
+  margin-bottom: 8px;
+}
+.meta span {
+  border: 1px solid;
+  padding: 0.1rem 0.5rem 0.4rem 0.6rem;
+  border-radius: 0.6rem;
+}
+.desc {
+  margin: 0.9rem 0;
+}
+.chars,
+.devpub,
+.genre {
+  font-size: 13px;
+  color: #333;
+  margin: 4px 0;
+}
+.empty {
+  color: #666;
+}
+.error {
+  color: #a00;
+}
