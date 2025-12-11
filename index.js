@@ -16,6 +16,11 @@ mongoose
 const app = express();
 
 app.use(express.json()); // allows us to read the JSON body of requests
+
+// Serve frontend static files at /app
+app.use("/app", express.static("public"));
+
+// API routes (existing)
 app.use("/", routes);
 app.listen(PORT, () => {
   console.log(`Server is running on http://localhost:${PORT}`);
