@@ -24,6 +24,7 @@ exports.createGame = async (req, res) => {
       publisher,
       developer,
       genre,
+      image,
     } = req.body;
 
     let chars = [];
@@ -46,6 +47,7 @@ exports.createGame = async (req, res) => {
       publisher,
       developer,
       genre,
+      image,
     });
 
     await newGame.save();
