@@ -7,6 +7,8 @@ const searchInput = document.getElementById("search-input");
 const results = document.getElementById("results");
 
 let games = [];
+let currentUser = null;
+let isAdmin = false;
 
 function unique(values) {
   return [...new Set(values)].sort();
@@ -41,6 +43,20 @@ function render(list) {
         }
       }
 
+      // ✅ Step 3: controls block
+      const controls =
+        currentUser && (g.author === currentUser || isAdmin)
+          ? `
+            <div class="game-controls">
+              <button onclick="showEditForm(${JSON.stringify(g).replace(
+                /"/g,
+                "&quot;"
+              )})">Edit</button>
+              <button onclick="deleteGame('${g._id}')">Delete</button>
+            </div>
+          `
+          : "";
+
       return `
         <article class="game">
           <div class="card-header">
@@ -59,8 +75,10 @@ function render(list) {
         g.publisher ? ` — ${g.publisher}` : ""
       }</p>
             <p class="genre">Genre: ${g.genre || "—"}</p>
+            ${controls}
           </div>
           <img src="${imageSrc}" alt="${g.title} cover image" />
+          
         </article>
       `;
     })
@@ -153,6 +171,9 @@ async function checkAuth() {
     const logoutBtn = document.getElementById("logout-btn");
 
     if (d && d.user) {
+      currentUser = d.user.username;
+      isAdmin = d.user.isAdmin || false;
+
       if (who) who.textContent = d.user.username;
       if (loginLink) loginLink.style.display = "none";
       if (logoutBtn) logoutBtn.style.display = "";
@@ -178,6 +199,9 @@ async function checkAuth() {
         });
       }
     } else {
+      currentUser = null;
+      isAdmin = false;
+
       if (who) who.textContent = "";
       if (loginLink) loginLink.style.display = "";
       if (logoutBtn) logoutBtn.style.display = "none";
@@ -192,6 +216,121 @@ async function checkAuth() {
     console.error("auth check failed", err);
   }
 }
+
+// Edit/Delete handlers
+async function editGame(id) {
+  const newTitle = prompt("Enter new title:");
+  if (!newTitle) return;
+
+  try {
+    await fetch(`/${id}`, {
+      method: "PUT",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ title: newTitle }),
+      credentials: "include",
+    });
+    loadGames();
+  } catch (err) {
+    console.error("Edit failed", err);
+  }
+}
+
+async function deleteGame(id) {
+  if (!confirm("Are you sure you want to delete this game?")) return;
+
+  try {
+    await fetch(`/${id}`, {
+      method: "DELETE",
+      credentials: "include",
+    });
+    loadGames();
+  } catch (err) {
+    console.error("Delete failed", err);
+  }
+}
+
+function showEditForm(game) {
+  document.getElementById("edit-id").value = game._id;
+  document.getElementById("edit-title").value = game.title || "";
+  document.getElementById("edit-description").value = game.description || "";
+  document.getElementById("edit-console").value = game.console || "";
+  document.getElementById("edit-genre").value = game.genre || "";
+
+  document.getElementById("edit-form").style.display = "block";
+}
+
+function cancelEdit() {
+  document.getElementById("edit-form").style.display = "none";
+}
+
+document
+  .getElementById("game-edit-form")
+  .addEventListener("submit", async (e) => {
+    e.preventDefault();
+    const id = document.getElementById("edit-id").value;
+    const updated = {
+      title: document.getElementById("edit-title").value,
+      description: document.getElementById("edit-description").value,
+      console: document.getElementById("edit-console").value,
+      genre: document.getElementById("edit-genre").value,
+    };
+
+    try {
+      await fetch(`/${id}`, {
+        method: "PUT",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(updated),
+        credentials: "include",
+      });
+      cancelEdit();
+      loadGames();
+    } catch (err) {
+      console.error("Edit failed", err);
+    }
+  });
+
+document
+  .getElementById("game-create-form")
+  .addEventListener("submit", async (e) => {
+    e.preventDefault();
+
+    const newGame = {
+      title: document.getElementById("create-title").value,
+      description: document.getElementById("create-description").value,
+      console: document.getElementById("create-console").value,
+      genre: document.getElementById("create-genre").value,
+      franchise: document.getElementById("create-franchise").value,
+      developer: document.getElementById("create-developer").value,
+      publisher: document.getElementById("create-publisher").value,
+      release_date: document.getElementById("create-release").value,
+      characters: document
+        .getElementById("create-characters")
+        .value.split(",")
+        .map((c) => c.trim())
+        .filter(Boolean),
+    };
+
+    try {
+      const res = await fetch("/", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(newGame),
+        credentials: "include", // ensures session cookie is sent
+      });
+
+      if (res.ok) {
+        alert("Game created successfully!");
+        e.target.reset(); // clear form
+        loadGames(); // reload list
+      } else {
+        const err = await res.json();
+        alert("Error creating game: " + (err.message || res.statusText));
+      }
+    } catch (err) {
+      console.error("Create failed", err);
+      alert("Error creating game");
+    }
+  });
 
 // initial load
 loadGames();
