@@ -93,45 +93,31 @@ exports.getGameById = async (req, res) => {
   }
 };
 
+// update game
 exports.updateGameById = async (req, res) => {
   try {
-    const { id } = req.params;
-    const updateFields = { ...req.body };
+    Object.assign(req.game, req.body);
 
-    if (typeof updateFields.characters === "string") {
-      updateFields.characters = updateFields.characters
+    if (typeof req.game.characters === "string") {
+      req.game.characters = req.game.characters
         .split(",")
         .map((c) => c.trim())
         .filter(Boolean);
     }
 
-    const updatedGame = await Game.findByIdAndUpdate(id, updateFields, {
-      new: true,
-    });
-
-    if (!updatedGame) {
-      return res.status(404).send({ message: "Game not found" });
-    }
-
-    res.send({ message: "Game updated successfully", game: updatedGame });
+    await req.game.save();
+    res.json({ message: "Game updated successfully", game: req.game });
   } catch (error) {
-    res.status(500).send({ message: "Error updating game", error });
+    res.status(500).json({ message: "Error updating game", error });
   }
 };
 
-// Delete a game by id
+// delete game
 exports.deleteGameById = async (req, res) => {
   try {
-    const { id } = req.params;
-
-    const deleted = await Game.findByIdAndDelete(id);
-
-    if (!deleted) {
-      return res.status(404).send({ message: "Game not found" });
-    }
-
-    res.send({ message: "Game deleted successfully", game: deleted });
+    await req.game.deleteOne();
+    res.json({ message: "Game deleted successfully" });
   } catch (error) {
-    res.status(500).send({ message: "Error deleting game", error });
+    res.status(500).json({ message: "Error deleting game", error });
   }
 };

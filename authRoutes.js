@@ -55,8 +55,13 @@ router.post("/logout", (req, res, next) => {
 });
 
 router.get("/me", (req, res) => {
-  if (!req.user) return res.status(200).send({ user: null });
-  res.send({ user: { id: req.user._id, username: req.user.username } });
+  if (req.isAuthenticated()) {
+    res.json({
+      user: { username: req.user.username, isAdmin: req.user.isAdmin },
+    });
+  } else {
+    res.json({ user: null });
+  }
 });
 
 module.exports = router;

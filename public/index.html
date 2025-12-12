@@ -48,9 +48,48 @@
             placeholder="Search title, description, characters"
           />
         </label>
-
-        <!-- <button id="clear-btn">Clear</button> -->
       </section>
+
+      <div id="create-form">
+        <h3>Create New Game</h3>
+        <form id="game-create-form">
+          <label>Title: <input type="text" id="create-title" required /></label
+          ><br />
+          <label
+            >Description: <textarea id="create-description"></textarea></label
+          ><br />
+          <label>Console: <input type="text" id="create-console" /></label
+          ><br />
+          <label>Genre: <input type="text" id="create-genre" /></label><br />
+          <label>Franchise: <input type="text" id="create-franchise" /></label
+          ><br />
+          <label>Developer: <input type="text" id="create-developer" /></label
+          ><br />
+          <label>Publisher: <input type="text" id="create-publisher" /></label
+          ><br />
+          <label>Release Date: <input type="date" id="create-release" /></label
+          ><br />
+          <label
+            >Characters (comma separated):
+            <input type="text" id="create-characters" /></label
+          ><br />
+          <button type="submit">Add Game</button>
+        </form>
+      </div>
+
+      <div id="edit-form" style="display: none">
+        <h3>Edit Game</h3>
+        <form id="game-edit-form">
+          <input type="hidden" id="edit-id" />
+          <label>Title: <input type="text" id="edit-title" /></label><br />
+          <label>Description: <textarea id="edit-description"></textarea></label
+          ><br />
+          <label>Console: <input type="text" id="edit-console" /></label><br />
+          <label>Genre: <input type="text" id="edit-genre" /></label><br />
+          <button type="submit">Save</button>
+          <button type="button" onclick="cancelEdit()">Cancel</button>
+        </form>
+      </div>
 
       <section id="results"></section>
     </main>
