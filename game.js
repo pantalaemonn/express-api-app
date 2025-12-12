@@ -12,6 +12,7 @@ const gameSchema = new mongoose.Schema({
   developer: { type: String },
   genre: { type: String },
   image: { type: String },
+  author: { type: String },
 });
 
 module.exports = mongoose.model("Game", gameSchema);
