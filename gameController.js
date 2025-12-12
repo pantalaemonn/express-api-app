@@ -11,9 +11,26 @@ exports.getAllGames = async (req, res) => {
   }
 };
 
+// Return only games authored by the logged-in user
+exports.getMyGames = async (req, res) => {
+  try {
+    if (!req.user) {
+      return res.status(401).send({ message: "Not authenticated" });
+    }
+    const games = await Game.find({ author: req.user.username });
+    res.send({ Games: games });
+  } catch (error) {
+    res.status(500).send({ message: "Error retrieving user games", error });
+  }
+};
+
 // Create a game document. Accepts `characters` as array or comma-separated string.
 exports.createGame = async (req, res) => {
   try {
+    if (!req.user) {
+      return res.status(401).send({ message: "Not authenticated" });
+    }
+
     const {
       franchise,
       title,
@@ -25,6 +42,7 @@ exports.createGame = async (req, res) => {
       developer,
       genre,
       image,
+      author,
     } = req.body;
 
     let chars = [];
@@ -48,9 +66,8 @@ exports.createGame = async (req, res) => {
       developer,
       genre,
       image,
+      author: req.user.username, // automatically set from logged-in user
     });
-
-    await newGame.save();
 
     res
       .status(201)

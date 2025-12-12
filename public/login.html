@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Login</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main>
+      <h1>Login</h1>
+      <form id="login-form">
+        <label
+          >Username<br /><input id="username" name="username" required
+        /></label>
+        <label
+          >Password<br /><input
+            id="password"
+            name="password"
+            type="password"
+            required
+        /></label>
+        <div style="margin-top: 8px">
+          <button type="submit">Login</button>
+          <a href="/app/">Back</a>
+        </div>
+      </form>
+      <div id="msg" style="color: crimson; margin-top: 8px"></div>
+    </main>
+    <script src="login.js"></script>
+  </body>
+</html>
