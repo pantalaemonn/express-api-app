@@ -1,0 +1,2 @@
+An app built on top of Express and Passport.JS. The app calls on a custom API to produce a list of games I own, and will eventually track my video game stats including completion progress, reviews and such.
+Passport.JS is used to provide secure user authentication, and ties into the wider app by attaching usernames to authorship of specific games added by that user, allowing them to access to CRUD functions from the front-end to manage their library of games, as well as add posts to the app.
